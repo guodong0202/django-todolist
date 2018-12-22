@@ -1,0 +1,23 @@
+{%  extends "todolist/base.html" %}
+{% block title %} edit{% endblock title%}
+{% block main_body %}
+    <br>
+    <form id="form-edit" method="POST" action="">
+         {% csrf_token %}
+        <div class="form-group">
+            <label for="editTodo"></label>
+            <input name='editedlist' class="form-control" id="editTodo" type="text" placeholder="Please input value" value="{{ editlist }}">
+            <small id="help" class="form-text text-muted">在这里编辑待办事项</small>
+            <!--small是帮助文本-->
+        </div>
+        {% if Alert %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong><center>{{Alert}}</center></strong>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+        {% endif %}
+        <button class="btn btn-primary btn-lg btn-block" type="submit">提交</button>
+    </form>
+{% endblock main_body%}
