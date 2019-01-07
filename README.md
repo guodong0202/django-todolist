@@ -1,2 +1,2 @@
 # django-todolist
-Just Test for hotfix v1.1
+Just Test for hotfix v1.2
